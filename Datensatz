@@ -1,5 +1,3 @@
-## Gruppenaufgabe
-
 # 100 Personen, je 5 Variablen + ID-Spalte
 
 set.seed(1710)
