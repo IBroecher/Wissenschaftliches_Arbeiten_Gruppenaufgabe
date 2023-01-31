@@ -1,125 +1,9 @@
-## Gruppenaufgabe
-
-# 100 Personen, je 5 Variablen + ID-Spalte
-
 set.seed(1710)
-
-# Mithilfe einer Funktion das ganze Erstellen?
-# Oder als Matrix?
-
-
-# (1) Alter, simuliert aus einer Normalverteilung mit Erwartungswert 25 und 
-#     einer Standardabweichung von 2
-
-Alter <- rnorm(n = 100, mean = 25, sd = sqrt(2))  # ??
-                                                  # auf ganze Zahlen runden?
-
-# (2) Studienfach, zufällig gezogen für alle Personen aus einer Auswahl von 
-#     „Statistik“, „Data Science“, „Mathe“ und „Informatik“, wobei die Fächer 
-#     „Statistik“ und „Data Science“ mit gleicher Wahrscheinlichkeit studiert
-#     werden sollen, „Informatik“ mit einer etwas geringeren Wahrscheinlichkeit
-#     und „Mathe“ mit der geringsten Wahrscheinlichkeit
-
-# Stat: 37%   Data: 37%
-# Info: 20%
-# Mathe: 6%
-
-Studienfach <- sample(c("Statistik", "Data Science", "Mathe“, "Informatik“),
-                      100, replace = TRUE, prob=c(0.37, 0.37, 0.2, 0.06)
-
-# (3) Interesse an Mathematik, wobei hier ein von Ihnen frei zu wählender
-#     Zusammenhang mit Studienfach bestehen darf (aber nicht muss); hier können 
-#     Sie überlegen, welchen Zusammenhang Sie für plausibel halten und 
-#     entsprechend simulieren; die Variable soll nur Werte ∈{1,2,3,4,5,6,7} 
-#     annehmen können (wie Sie dafür sorgen ist Ihnen frei überlassen), wobei
-#     1 = sehr geringes Interesse, und 7 = sehr hohes Interesse abbildet
-
-# Stat: 3-6  Data: 4-7
-# Info: 4-7
-# Mathe: 6-7
-
-if (Studienfach = "Statistik")
-{Interesse_Mathematik[i] <- sample(c(3, 4, 5, 6))}
-else 
-  if (Studienfach = "Data Science")
-  {Interesse_Mathematik[i] <- sample(c(4, 5, 6, 7))}
-else
-  if (Studienfach = "Informatik")
-  {Interesse_Mathematik[i] <- sample(c(4, 5, 6, 7))}
-else
-  if (Studienfach = "Mathematik")
-  {Interesse_Mathematik[i] <- sample(c(6, 7))}
-
-# (4) Interesse an Programmieren, wobei hier ein von Ihnen frei zu wählender 
-#     Zusammenhang mit Studienfach bestehen darf (aber nicht muss); hier können
-#     Sie überlegen, welchen Zusammenhang Sie für plausibel halten und 
-#     entsprechend simulieren, die Variable soll nur Werte ∈{1,2,3,4,5,6,7} 
-#     annehmen können (wie Sie dafür sorgen ist Ihnen frei überlassen), wobei 
-#     1 = sehr geringes Interesse, und 7 = sehr hohes Interesse abbildet
-
-# Stat: 2-5  Data: 6-7
-# Info: 6-7
-# Mathe: 1-4
-
-if (Studienfach = "Statistik")
-{Interesse_Programmieren[i] <- sample(c(2, 3, 4, 5))}
-else 
-  if (Studienfach = "Data Science")
-  {Interesse_Programmieren[i] <- sample(c(6, 7))}
-else
-  if (Studienfach = "Informatik")
-  {Interesse_Programmieren[i] <- sample(c(6, 7))}
-else
-  if (Studienfach = "Mathematik")
-  {Interesse_Programmieren[i] <- sample(c(1, 2, 3, 4))}
-
-# (5) Mathe-LK (ja/nein), eine dichotome Variable, die kodiert, ob jemand in der
-#     Schule Mathe-LK hatte oder nicht; hierbei darf (muss aber nicht) ein
-#     Zusammenhang Ihrer Wahl mit Studienfach, Interesse an Mathematik und 
-#     Interesse an Programmieren bestehen
-
-# Ich weiß nicht, wie man es von mehreren Faktoren abhängig macht, wen du da 
-# mehr weißt, dann kannst du es sehr gerne sagen :)
-# Ich nehme jetzt mal das Interesse an Mathematik, da man sich ja auch erst im 
-# letzten Schuljahr für ein Studium aussuchen kann. Und dann fand ich
-# das Mathe Interesse relevanter als das Programmier Interesse.
-# Aber da kannst du sehr gerne deine Meinung zu schreiben :)
-
-if (Interesse_Mathematik = 7)
-{Mathe-LK[i] <- "ja"}
-else
-  if (Interesse_Mathematik = 6)
-  {Mathe-LK[i] <- sample(c("ja", "nein"), prob=c(0.9, 0.1))}
-else
-  if (Interesse_Mathematik = 5)
-  {Mathe-LK[i] <- sample(c("ja", "nein"), prob=c(0.7, 0.3))}
-else
-  if (Interesse_Mathematik = 4)
-  {Mathe-LK[i] <- sample(c("ja", "nein"), prob=c(0.55, 0.55))}
-else
-  if (Interesse_Mathematik = 3)
-  {Mathe-LK[i] <- sample(c("ja", "nein"), prob=c(0.45, 0.55))}
-else
-  if (Interesse_Mathematik = 2 || Interesse_Mathematik = 1)
-  {Mathe-LK[i] <- "nein"}
-  
-  
-  
-  
-  
-  
-  
-  
-  #so dass der Code laeuft
-  
-  set.seed(1710)
   
 # (1) Alter, simuliert aus einer Normalverteilung mit Erwartungswert 25 und 
 #     einer Standardabweichung von 2
-  Alter <- rnorm(n = 100, mean = 25, sd = sqrt(2))  # ??
-# auf ganze Zahlen runden?
+  Alter <- floor(rnorm(n = 100, mean = 25, sd = sqrt(2)))  # ??
 
-Alter
 
 # (2) Studienfach, zufällig gezogen für alle Personen aus einer Auswahl von 
 #     "Statistik", "Data Science", "Mathe" und "Informatik", wobei die Fächer 
@@ -239,3 +123,6 @@ else
 if (Interesse_Mathematik[i] == 2 || Interesse_Mathematik == 1)
 {Mathe_LK[i] <- "nein"}
 }
+
+Datensatz <- data.frame(Alter, Studienfach, Interesse_Mathematik, 
+                        Interesse_Programmieren, Mathe_LK)
