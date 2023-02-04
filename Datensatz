@@ -21,7 +21,6 @@ Studienfach <- sample(c("Statistik", "Data Science", "Mathe", "Informatik"),
                       
 # Stat: 3-6  Data: 4-7 Info: 4-7 Mathe: 6-7
                       
-
 Interesse_Mathematik <- c()
 
 for(i in 1:length(Studienfach)){
