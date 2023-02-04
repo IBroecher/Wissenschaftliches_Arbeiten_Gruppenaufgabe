@@ -1,7 +1,8 @@
 set.seed(1710)
   
 # (1) Alter, simuliert aus einer Normalverteilung mit Erwartungswert 25 und einer Standardabweichung von 2
-  Alter <- floor(rnorm(n = 100, mean = 25, sd = sqrt(2)))  # ??
+
+Alter <- floor(rnorm(n = 100, mean = 25, sd = sqrt(2)))  
 
 
 # (2) Studienfach, zufällig gezogen für alle Personen aus einer Auswahl von "Statistik", "Data Science", "Mathe" und "Informatik", wobei die Fächer 
