@@ -2,8 +2,8 @@
 ################################### Git Hib Aufgabe ############################
 ################################################################################
 #                                                                              #
-#                      Tobias H�bner, Paula Ruf, Helen Wallner                 #
-#                                     13.01.2023                               #
+#    Tobias Hübner, Paula Ruf, Helen Wallner, Xenia Wehner, Ina Bröcher        #
+#                                     14.02.2023                               #
 #                                                                              #
 ################################################################################
 
@@ -15,7 +15,7 @@ test2 <- c("w", "m", "m", "m", "w", "d", "w", "w", "m")
 
 
 A <- function(x, ...){
-  cat(paste("L�nge des Datensatzes (N):", length(x), "\n",
+  cat(paste("Länge des Datensatzes (N):", length(x), "\n",
   "Minimum:", min(x), "\n",
   "Maximum:", max(x), "\n",
   "Mittelwert:", mean(x), "\n",
@@ -29,7 +29,7 @@ A(test)
 
 B <- function(x, ...) {
   cat(paste("Faktorstufen:", levels(factor(x)),
-  "H�ufigkeiten:", table(x) ))
+  "Häufigkeiten:", table(x) ))
 }
 
 B(test2)
@@ -39,3 +39,23 @@ c <- function(x, y, ...) {
   cat(paste("Korrelation:", corr(x, y), "\n",
   "lineares Modell:", lm(x, y) ))
 }
+
+# (f) Eine Funktion, die eine geeignete Visualisierung von drei oder vier kategorialen Variablen erstellt
+
+barplot(table(Datensatz$Studienfach), main="Verteilung der Studienfächer",
+        ylab="Abs. Häufigkeiten")
+
+barplot(table(Datensatz$Mathe_LK), main="Mathematik Leistungskurs",
+        ylab="Abs. Häufigkeiten")
+
+barplot(table(Datensatz$Mathe_LK, Datensatz$Studienfach), beside = TRUE,
+        main="Mathe LK aufgeteilt nach Studienfächern",
+        ylab="Abs. Häufigkeiten")
+
+barplot(table(Datensatz$Interesse_Programmieren, Datensatz$Studienfach), beside = TRUE,
+        main="Interesse Programmieren aufgeteilt nach Studienfächern",
+        ylab="Abs. Häufigkeiten")
+
+barplot(table(Datensatz$Interesse_Programmieren, Datensatz$Studienfach), beside = TRUE,
+        main="Interesse Programmieren aufgeteilt nach Studienfächern",
+        ylab="Abs. Häufigkeiten")
