@@ -5,13 +5,15 @@ Aufgabenstellung:
 (c) Eine Funktion, die geeignete deskriptive bivariate Statistiken für den Zusammenhang zwischen zwei kategorialen Variablen berechnet ausgibt
 (d) Eine Funktion, die geeignete deskriptive bivariate Statistiken für den Zusammengang zwischen einer metrischen und einer dichotomen Variablen berechnet und ausgibt
 (e) Eine Funktion, die eine mindestens ordinal skalierte Variable quantilbasiert kategorisiert (z.B. in „niedrig“, „mittel“, „hoch“)
-teste <- sample(c(1:5), 10, replace = TRUE)
-quantile(teste)
-niedrig <- c()
-mittel <- c()
-hoch <- c()
 
-for(i in 1:length(teste)){
+teste <- sample(c(1:5), 10, replace = TRUE)
+
+E <- function(x){
+  niedrig <- c()
+  mittel <- c()
+  hoch <- c()
+  
+  for(i in 1:length(teste)){
   if(teste[i] <= quantile(teste)[2]){
     niedrig <- append(niedrig, teste[i]) 
   }
@@ -21,6 +23,13 @@ for(i in 1:length(teste)){
   if(teste[i] > quantile(teste)[4]){
     hoch <- append(hoch, teste[i])
   }
+  }
+  cat("niedrig: ", niedrig, "\n",
+      "mittel: ", mittel, "\n",
+      "hoch: ", hoch)
 }
+
+E(teste)
+
 (f) Eine Funktion, die eine geeignete Visualisierung von drei oder vier kategorialen Variablen erstellt
 Freiwillig: weitere zur Deskription und Visualisierung geeignete Funktionen Funkionen-R-Skript 2 soll
