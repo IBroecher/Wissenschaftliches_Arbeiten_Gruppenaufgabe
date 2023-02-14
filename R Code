@@ -14,14 +14,14 @@ E <- function(x){
   hoch <- c()
   
   for(i in 1:length(teste)){
-  if(teste[i] <= quantile(teste)[2]){
-    niedrig <- append(niedrig, teste[i]) 
+  if(x[i] <= quantile(x)[2]){
+    niedrig <- append(niedrig, x[i]) 
   }
-  if(teste[i] > quantile(teste)[2] && teste[i] <= quantile(teste)[4]){
-    mittel <- append(mittel, teste[i])
+  if(x[i] > quantile(x)[2] && x[i] <= quantile(x)[4]){
+    mittel <- append(mittel, x[i])
   }
-  if(teste[i] > quantile(teste)[4]){
-    hoch <- append(hoch, teste[i])
+  if(x[i] > quantile(x)[4]){
+    hoch <- append(hoch, x[i])
   }
   }
   cat("niedrig: ", niedrig, "\n",
