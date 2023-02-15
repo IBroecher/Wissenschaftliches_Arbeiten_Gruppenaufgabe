@@ -40,6 +40,35 @@ c <- function(x, y, ...) {
   "lineares Modell:", lm(x, y) ))
 }
 
+
+#(e) Eine Funktion, die eine mindestens ordinal skalierte Variable quantilbasiert kategorisiert (z.B. in „niedrig“, „mittel“, „hoch“)
+
+teste <- sample(c(1:5), 10, replace = TRUE)
+
+E <- function(x){
+  niedrig <- c()
+  mittel <- c()
+  hoch <- c()
+  
+  for(i in 1:length(teste)){
+  if(x[i] <= quantile(x)[2]){
+    niedrig <- append(niedrig, x[i]) 
+  }
+  if(x[i] > quantile(x)[2] && x[i] <= quantile(x)[4]){
+    mittel <- append(mittel, x[i])
+  }
+  if(x[i] > quantile(x)[4]){
+    hoch <- append(hoch, x[i])
+  }
+  }
+  cat("niedrig: ", niedrig, "\n",
+      "mittel: ", mittel, "\n",
+      "hoch: ", hoch)
+}
+
+E(teste)
+
+
 # (f) Eine Funktion, die eine geeignete Visualisierung von drei oder vier kategorialen Variablen erstellt
 
 barplot(table(Datensatz$Studienfach), main="Verteilung der Studienfächer",
