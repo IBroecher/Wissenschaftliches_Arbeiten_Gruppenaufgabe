@@ -76,6 +76,8 @@ E(teste)
 
 # (f) Eine Funktion, die eine geeignete Visualisierung von drei oder vier kategorialen Variablen erstellt
 
+F <- function(x){
+
 barplot(table(Datensatz$Studienfach), main="Verteilung der Studienfächer",
         ylab="Abs. Häufigkeiten")
 
@@ -93,3 +95,5 @@ barplot(table(Datensatz$Interesse_Programmieren, Datensatz$Studienfach), beside 
 barplot(table(Datensatz$Interesse_Programmieren, Datensatz$Studienfach), beside = TRUE,
         main="Interesse Programmieren aufgeteilt nach Studienfächern",
         ylab="Abs. Häufigkeiten")
+
+}
