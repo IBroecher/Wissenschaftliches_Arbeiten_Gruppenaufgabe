@@ -40,6 +40,11 @@ c <- function(x, y, ...) {
   "lineares Modell:", lm(x, y) ))
 }
 
+# (d) Eine Funktion, die geeignete deskriptive bivariate Statistiken für den Zusammengang zwischen einer metrischen und einer dichotomen Variablen berechnet und ausgibt
+
+# Die einzige dichotome Variable im Datensatz ist der Mathe LK, und die dazu passenste metrische Variable das Interesse an Mathematik.
+# Nur habe ich schwierigkeiten, eine passende Darstellung zu finden, da die Variable des Mathe LKs ja non-numeric ist.
+# Weiß da wer weiter?
 
 #(e) Eine Funktion, die eine mindestens ordinal skalierte Variable quantilbasiert kategorisiert (z.B. in „niedrig“, „mittel“, „hoch“)
 
