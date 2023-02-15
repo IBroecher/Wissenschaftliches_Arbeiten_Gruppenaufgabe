@@ -50,7 +50,7 @@ E <- function(x){
   mittel <- c()
   hoch <- c()
   
-  for(i in 1:length(teste)){
+  for(i in 1:length(x)){
   if(x[i] <= quantile(x)[2]){
     niedrig <- append(niedrig, x[i]) 
   }
