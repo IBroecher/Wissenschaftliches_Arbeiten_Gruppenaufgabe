@@ -80,13 +80,15 @@ F <- function(x){
 
 barplot(table(Datensatz$Studienfach), main="Verteilung der Studienfächer",
         ylab="Abs. Häufigkeiten")
-
-barplot(table(Datensatz$Mathe_LK), main="Mathematik Leistungskurs",
-        ylab="Abs. Häufigkeiten")
-
+  
 barplot(table(Datensatz$Mathe_LK, Datensatz$Studienfach), beside = TRUE,
         main="Mathe LK aufgeteilt nach Studienfächern",
         ylab="Abs. Häufigkeiten")
+  
+# barplot(table(Datensatz$Mathe_LK, Datensatz$Studienfach), beside = TRUE,
+#       main="Mathe LK aufgeteilt nach Studienfächern",
+#       ylab="Abs. Häufigkeiten", col=c("darkred", "orange"))
+# legend("topright", c("Ja", "Nein"), col=c("darkred", "orange"))
 
 barplot(table(Datensatz$Interesse_Programmieren, Datensatz$Studienfach), beside = TRUE,
         main="Interesse Programmieren aufgeteilt nach Studienfächern",
@@ -95,5 +97,6 @@ barplot(table(Datensatz$Interesse_Programmieren, Datensatz$Studienfach), beside 
 barplot(table(Datensatz$Interesse_Programmieren, Datensatz$Studienfach), beside = TRUE,
         main="Interesse Programmieren aufgeteilt nach Studienfächern",
         ylab="Abs. Häufigkeiten")
+legend("topright", c("1", "2", "3", "4", "5", "6", "7"))
 
 }
