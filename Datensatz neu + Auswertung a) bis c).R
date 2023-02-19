@@ -180,6 +180,7 @@ LiMo(daten$Int_Mat, daten$Subject == "Mathe")
 
 
 
+                        
 
 
 
