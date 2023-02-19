@@ -42,9 +42,23 @@ c <- function(x, y, ...) {
 
 # (d) Eine Funktion, die geeignete deskriptive bivariate Statistiken für den Zusammengang zwischen einer metrischen und einer dichotomen Variablen berechnet und ausgibt
 
-# Die einzige dichotome Variable im Datensatz ist der Mathe LK, und die dazu passenste metrische Variable das Interesse an Mathematik.
-# Nur habe ich schwierigkeiten, eine passende Darstellung zu finden, da die Variable des Mathe LKs ja non-numeric ist.
-# Weiß da wer weiter?
+# Nach Mathe LK (ja/nein) aufgeteilt, wie das Interesse an Mathematik/ am Programmieren ist
+
+d <- function(x){
+  
+  i <- round(mean(x$Interesse_Mathematik[x$Mathe_LK == "ja"]),3)
+  ii <- round(mean(x$Interesse_Programmieren[x$Mathe_LK == "ja"]),3)
+  iii <- round(mean(x$Interesse_Mathematik[x$Mathe_LK == "nein"]),3)
+  iv <- round(mean(x$Interesse_Programmieren[x$Mathe_LK == "nein"]),3)
+  
+  cat("Mathe Leistungskurs:\n", 
+      "\nDurchschnittsinteresse an Mathe: ", i, 
+      "\nDurchschnittsinteresse am Programmieren: ", ii,
+      "\n\nKein Mathe Leistungskurs:\n", 
+      "\nDurchschnittsinteresse an Mathe: ", iii, 
+      "\nDurchschnittsinteresse am Programmieren: ", iv)
+  
+}
 
 #(e) Eine Funktion, die eine mindestens ordinal skalierte Variable quantilbasiert kategorisiert (z.B. in „niedrig“, „mittel“, „hoch“)
 
