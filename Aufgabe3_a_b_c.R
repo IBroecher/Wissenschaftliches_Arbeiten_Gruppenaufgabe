@@ -44,20 +44,17 @@ c <- function(x, y, ...) {
 
 # Nach Mathe LK (ja/nein) aufgeteilt, wie das Interesse an Mathematik/ am Programmieren ist
 
-d <- function(x){
-  
+D <- function(x){
   i <- round(mean(x$Interesse_Mathematik[x$Mathe_LK == "ja"]),3)
   ii <- round(mean(x$Interesse_Programmieren[x$Mathe_LK == "ja"]),3)
   iii <- round(mean(x$Interesse_Mathematik[x$Mathe_LK == "nein"]),3)
   iv <- round(mean(x$Interesse_Programmieren[x$Mathe_LK == "nein"]),3)
-  
-  cat("Mathe Leistungskurs:\n", 
-      "\nDurchschnittsinteresse an Mathe: ", i, 
-      "\nDurchschnittsinteresse am Programmieren: ", ii,
-      "\n\nKein Mathe Leistungskurs:\n", 
-      "\nDurchschnittsinteresse an Mathe: ", iii, 
-      "\nDurchschnittsinteresse am Programmieren: ", iv)
-  
+  cat("Durchschnittsinteresse an Mathematik:\n",
+      "\nMit Mathe Leistungskurs: ", i,
+      "\nOhne Mathe Leistungskurs: ", iii,
+      "\n\nDurchschnittsinteresse Programmieren:\n",
+      "\nMit Mathe Leistungskurs: ", ii,
+      "\nOhne Mathe Leistungskurs: ", iv)
 }
 
 #(e) Eine Funktion, die eine mindestens ordinal skalierte Variable quantilbasiert kategorisiert (z.B. in „niedrig“, „mittel“, „hoch“)
